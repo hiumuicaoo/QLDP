@@ -28,15 +28,14 @@ RUN npm ci --only=production
 
 # Copy built artifacts from the builder stage
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/dangphi ./dangphi
 
 # Set environment variables
 ENV NODE_ENV=production
 ENV PORT=3000
 ENV DATABASE_DIR=/app/data
 
-# Create data directory
-RUN mkdir -p /app/data
+# Create data and dangphi directories
+RUN mkdir -p /app/data /app/dangphi
 
 # Port exposed by the server
 EXPOSE 3000
