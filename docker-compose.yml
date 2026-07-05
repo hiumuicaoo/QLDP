@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: quan-ly-dang-phi
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_DIR=/app/data
+    volumes:
+      # Lưu trữ dữ liệu danh sách đảng viên, lương, số dư mốc ban đầu...
+      - ./data:/app/data
+      # Lưu trữ các file quyết định chi, đề xuất chi đã được tạo ra
+      - ./dangphi/DEXUATCHI:/app/dangphi/DEXUATCHI

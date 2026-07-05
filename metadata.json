@@ -1,0 +1,6 @@
+{
+  "name": "Quản lý Đảng phí",
+  "description": "Hệ thống quản lý thông tin đảng viên, tính toán số tiền đảng phí hàng tháng và lập báo cáo thu nộp đảng phí.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
